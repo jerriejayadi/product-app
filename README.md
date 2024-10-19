@@ -1,50 +1,118 @@
-# React + TypeScript + Vite
+# React Product App Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Product application built with React, TypeScript, and Vite that displays products from DummyJSON API. Features include grid layout, product details, search functionality, wishlist management, and theme switching.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Product Grid Layout**
+  - Thumbnail image display
+  - Product title and category
+  - Price with discount
+  - Product rating
+  - Stock status indicator (Low stock warning when ≤ 5 items)
+- **Product Detail Page**
 
-## Expanding the ESLint configuration
+  - Multiple product images
+  - Comprehensive product information
+    - Title and description
+    - Price and discount
+    - Category and brand
+    - Rating and stock status
+    - SKU information
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **User Features**
+  - Search and filter functionality
+  - Bookmark/Wishlist system with local storage persistence
+  - Responsive grid layout
+  - Dark/Light mode theme switching
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- [React](https://reactjs.org/) - UI Library
+- [TypeScript](https://www.typescriptlang.org/) - Programming Language
+- [Vite](https://vitejs.dev/) - Build Tool
+- [Zustand](https://github.com/pmndrs/zustand) - State Management
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [DummyJSON](https://dummyjson.com/) - API
+
+## 🌐 Live Demo
+
+Check out the live demo: [Product App](https://product-app-lilac.vercel.app/)
+
+## 📦 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/cakradana/product-app.git
+cd product-app
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+## 💾 State Management
+
+This project uses Zustand for state management. The store includes:
+
+- Product list management
+- Search/filter state
+- Wishlist management with local storage persistence
+- Theme preference management
+
+## 🎨 Theme System
+
+The application supports dynamic theme switching with the following features:
+
+- Toggle between light and dark modes
+- Theme persistence across sessions using local storage
+- Automatic styling updates using Tailwind's dark mode utilities
+- Smooth theme transitions
+
+## 🔍 API Integration
+
+The application fetches data from DummyJSON's product API:
+
+- Products List: `GET /products`
+- Search Products: `GET /products/search?q={query}`
+
+## 🎨 Styling
+
+Tailwind CSS is used for styling with a responsive design approach. Custom utility classes are created for consistent styling across components. The theme system leverages Tailwind's dark mode features for seamless dark/light mode switching.
+
+## 📱 Responsive Design
+
+The application is fully responsive with breakpoints:
+
+- Mobile: 320px - 480px
+- Tablet: 481px - 768px
+- Desktop: 769px and above
+
+## 🚀 Building for Production
+
+```bash
+npm run build
+```
+
+This will create a `dist` folder with production-ready assets.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
